@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mycommons.cn/"/>
-  <updated>2019-12-02T12:06:47.265Z</updated>
+  <updated>2019-12-02T12:08:04.060Z</updated>
   <id>https://mycommons.cn/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="https://mycommons.cn/2019/12/02/hexo-error/"/>
     <id>https://mycommons.cn/2019/12/02/hexo-error/</id>
     <published>2019-12-02T12:02:45.000Z</published>
-    <updated>2019-12-02T12:06:47.265Z</updated>
+    <updated>2019-12-02T12:08:04.060Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Hexo-命令保存&quot;&gt;&lt;a href=&quot;#Hexo-命令保存&quot; class=&quot;headerlink&quot; title=&quot;Hexo 命令保存&quot;&gt;&lt;/a&gt;Hexo
-        
-      
+      &lt;h1 id=&quot;Hexo-命令保存&quot;&gt;&lt;a href=&quot;#Hexo-命令保存&quot; class=&quot;headerlink&quot; title=&quot;Hexo 命令保存&quot;&gt;&lt;/a&gt;Hexo 命令保存&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;好友没有写博客了，今天Hexo，发现命令不可用，出现这样的错误&lt;code&gt;TypeError: Cannot read property &amp;#39;replace&amp;#39; of null&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
