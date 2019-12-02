@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>流水不腐小夏</title>
+  
+  <subtitle>http://mycommons.cn</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mycommons.cn/"/>
+  <updated>2019-12-02T03:34:12.211Z</updated>
+  <id>http://mycommons.cn/</id>
+  
+  <author>
+    <name>流水不腐小夏</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Restful风格的验证码</title>
+    <link href="http://mycommons.cn/2019/12/02/restful-captcha/"/>
+    <id>http://mycommons.cn/2019/12/02/restful-captcha/</id>
+    <published>2019-12-02T03:33:10.000Z</published>
+    <updated>2019-12-02T03:34:12.211Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Restful风格的验证码&quot;&gt;&lt;a href=&quot;#Restful风格的验证码&quot; class=&quot;headerlink&quot; title=&quot;Restful风格的验证码&quot;&gt;&lt;/a&gt;Restful风格的验证码&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Spring Boot" scheme="http://mycommons.cn/tags/Spring-Boot/"/>
+    
+      <category term="restful" scheme="http://mycommons.cn/tags/restful/"/>
+    
+      <category term="验证码" scheme="http://mycommons.cn/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MyBatis-Plus Gradle 代码生成插件了解一下</title>
+    <link href="http://mycommons.cn/2018/12/21/mpg/"/>
+    <id>http://mycommons.cn/2018/12/21/mpg/</id>
+    <published>2018-12-21T10:08:06.000Z</published>
+    <updated>2019-12-02T03:09:22.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mybatis-Plus-Gradle-Generator&quot;&gt;&lt;a href=&quot;#Mybatis-Plus-Gradle-Generator&quot; class=&quot;headerlink&quot; title=&quot;Mybatis Plus Gradle
+        
+      
+    
+    </summary>
+    
+      <category term="后端开发" scheme="http://mycommons.cn/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="mybatis plus" scheme="http://mycommons.cn/tags/mybatis-plus/"/>
+    
+      <category term="gradle plugin" scheme="http://mycommons.cn/tags/gradle-plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins can&#39;t parse argument number changelog.url 问题</title>
+    <link href="http://mycommons.cn/2018/11/26/changelog-url/"/>
+    <id>http://mycommons.cn/2018/11/26/changelog-url/</id>
+    <published>2018-11-25T16:17:13.000Z</published>
+    <updated>2019-12-02T03:09:22.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近使用了Jenkins，碰到一问题，提示如下。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="http://mycommons.cn/categories/Jenkins/"/>
+    
+    
+      <category term="Jeknins" scheme="http://mycommons.cn/tags/Jeknins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh自动登录</title>
+    <link href="http://mycommons.cn/2018/11/25/ssh-login/"/>
+    <id>http://mycommons.cn/2018/11/25/ssh-login/</id>
+    <published>2018-11-25T07:53:35.000Z</published>
+    <updated>2019-12-02T03:09:22.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ssh自动登录&quot;&gt;&lt;a href=&quot;#ssh自动登录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="ssh" scheme="http://mycommons.cn/tags/ssh/"/>
+    
+      <category term="sshpass" scheme="http://mycommons.cn/tags/sshpass/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GsonSerializedNameGen</title>
+    <link href="http://mycommons.cn/2018/10/25/GsonSerializedNameGen/"/>
+    <id>http://mycommons.cn/2018/10/25/GsonSerializedNameGen/</id>
+    <published>2018-10-25T08:05:48.000Z</published>
+    <updated>2019-12-02T03:09:22.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Gson-SerializedName-Gen&quot;&gt;&lt;a href=&quot;#Gson-SerializedName-Gen&quot; class=&quot;headerlink&quot; title=&quot;Gson SerializedName Gen&quot;&gt;&lt;/a&gt;Gson
+        
+      
+    
+    </summary>
+    
+      <category term="插件工具" scheme="http://mycommons.cn/categories/%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Andorid Studio plugin" scheme="http://mycommons.cn/tags/Andorid-Studio-plugin/"/>
+    
+      <category term="gson" scheme="http://mycommons.cn/tags/gson/"/>
+    
+      <category term="jackson" scheme="http://mycommons.cn/tags/jackson/"/>
+    
+      <category term="fastjson" scheme="http://mycommons.cn/tags/fastjson/"/>
+    
+      <category term="plugin" scheme="http://mycommons.cn/tags/plugin/"/>
+    
+      <category term="注解生成工具" scheme="http://mycommons.cn/tags/%E6%B3%A8%E8%A7%A3%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac Git终端代理问题</title>
+    <link href="http://mycommons.cn/2018/09/25/git-proxy/"/>
+    <id>http://mycommons.cn/2018/09/25/git-proxy/</id>
+    <published>2018-09-25T08:03:04.000Z</published>
+    <updated>2019-12-02T03:09:22.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mac-Git终端代理问题&quot;&gt;&lt;a href=&quot;#Mac-Git终端代理问题&quot; class=&quot;headerlink&quot; title=&quot;Mac Git终端代理问题&quot;&gt;&lt;/a&gt;Mac
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="git" scheme="http://mycommons.cn/tags/git/"/>
+    
+      <category term="proxy" scheme="http://mycommons.cn/tags/proxy/"/>
+    
+      <category term="socks5" scheme="http://mycommons.cn/tags/socks5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot 项目自动发布与Supervisor</title>
+    <link href="http://mycommons.cn/2018/06/01/SpringBootSupervisor/"/>
+    <id>http://mycommons.cn/2018/06/01/SpringBootSupervisor/</id>
+    <published>2018-06-01T09:07:50.000Z</published>
+    <updated>2019-12-02T03:09:22.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring-Boot-项目自动发布与Supervisor&quot;&gt;&lt;a href=&quot;#Spring-Boot-项目自动发布与Supervisor&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Spring Boot" scheme="http://mycommons.cn/tags/Spring-Boot/"/>
+    
+      <category term="Supervisor" scheme="http://mycommons.cn/tags/Supervisor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于JSON RPC的一种Android跨进程调用解决方案了解一下？</title>
+    <link href="http://mycommons.cn/2018/05/30/Android-JSON-RPC/"/>
+    <id>http://mycommons.cn/2018/05/30/Android-JSON-RPC/</id>
+    <published>2018-05-29T17:02:02.000Z</published>
+    <updated>2019-12-02T03:09:22.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基于JSON-RPC的一种Android跨进程调用解决方案了解一下？&quot;&gt;&lt;a href=&quot;#基于JSON-RPC的一种Android跨进程调用解决方案了解一下？&quot; class=&quot;headerlink&quot; title=&quot;基于JSON
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://mycommons.cn/tags/Android/"/>
+    
+      <category term="跨进程通信" scheme="http://mycommons.cn/tags/%E8%B7%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="JSON RPC" scheme="http://mycommons.cn/tags/JSON-RPC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot 项目自动发布</title>
+    <link href="http://mycommons.cn/2018/04/24/SpringBootDeploy/"/>
+    <id>http://mycommons.cn/2018/04/24/SpringBootDeploy/</id>
+    <published>2018-04-24T15:21:29.000Z</published>
+    <updated>2019-12-02T03:09:22.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring-Boot-项目自动发布&quot;&gt;&lt;a href=&quot;#Spring-Boot-项目自动发布&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot 项目自动发布&quot;&gt;&lt;/a&gt;Spring Boot
+        
+      
+    
+    </summary>
+    
+      <category term="后端开发" scheme="http://mycommons.cn/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Spring Boot" scheme="http://mycommons.cn/tags/Spring-Boot/"/>
+    
+      <category term="Spring Boot Deploy" scheme="http://mycommons.cn/tags/Spring-Boot-Deploy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android KTX简介</title>
+    <link href="http://mycommons.cn/2018/02/07/Android-KTX/"/>
+    <id>http://mycommons.cn/2018/02/07/Android-KTX/</id>
+    <published>2018-02-07T07:59:38.000Z</published>
+    <updated>2019-12-02T03:09:22.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Android-KTX简介&quot;&gt;&lt;a href=&quot;#Android-KTX简介&quot; class=&quot;headerlink&quot; title=&quot;Android KTX简介&quot;&gt;&lt;/a&gt;Android KTX简介&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC
+        
+      
+    
+    </summary>
+    
+    
+      <category term="android" scheme="http://mycommons.cn/tags/android/"/>
+    
+      <category term="Kotlin" scheme="http://mycommons.cn/tags/Kotlin/"/>
+    
+      <category term="KTX" scheme="http://mycommons.cn/tags/KTX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot集成Kafka</title>
+    <link href="http://mycommons.cn/2017/11/26/SpringBoot-Kafka/"/>
+    <id>http://mycommons.cn/2017/11/26/SpringBoot-Kafka/</id>
+    <published>2017-11-26T07:06:44.000Z</published>
+    <updated>2019-12-02T03:09:22.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring-Boot集成Kafka&quot;&gt;&lt;a href=&quot;#Spring-Boot集成Kafka&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot集成Kafka&quot;&gt;&lt;/a&gt;Spring Boot集成Kafka&lt;/h1&gt;&lt;hr&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="后端开发" scheme="http://mycommons.cn/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="spring boot" scheme="http://mycommons.cn/tags/spring-boot/"/>
+    
+      <category term="kafka" scheme="http://mycommons.cn/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Cache与Redis结合使用</title>
+    <link href="http://mycommons.cn/2017/11/19/Spring-Cache-Redis/"/>
+    <id>http://mycommons.cn/2017/11/19/Spring-Cache-Redis/</id>
+    <published>2017-11-19T15:48:13.000Z</published>
+    <updated>2019-12-02T03:09:22.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring-Cache与Redis结合使用&quot;&gt;&lt;a href=&quot;#Spring-Cache与Redis结合使用&quot; class=&quot;headerlink&quot; title=&quot;Spring Cache与Redis结合使用&quot;&gt;&lt;/a&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="后端开发" scheme="http://mycommons.cn/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="spring cache" scheme="http://mycommons.cn/tags/spring-cache/"/>
+    
+      <category term="redis" scheme="http://mycommons.cn/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>是时候来一波Android插件化了</title>
+    <link href="http://mycommons.cn/2017/10/25/Android-RePlugin/"/>
+    <id>http://mycommons.cn/2017/10/25/Android-RePlugin/</id>
+    <published>2017-10-25T10:46:55.000Z</published>
+    <updated>2019-12-02T03:09:22.458Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;是时候来一波Android插件化了&quot;&gt;&lt;a href=&quot;#是时候来一波Android插件化了&quot; class=&quot;headerlink&quot; title=&quot;是时候来一波Android插件化了&quot;&gt;&lt;/a&gt;是时候来一波Android插件化了&lt;/h1&gt;&lt;hr&gt;
+&lt;!--
+        
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://mycommons.cn/categories/Android/"/>
+    
+    
+      <category term="Android插件化" scheme="http://mycommons.cn/tags/Android%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="Replugin" scheme="http://mycommons.cn/tags/Replugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB查询总结</title>
+    <link href="http://mycommons.cn/2017/10/24/MongoDB-Query/"/>
+    <id>http://mycommons.cn/2017/10/24/MongoDB-Query/</id>
+    <published>2017-10-24T10:22:03.000Z</published>
+    <updated>2019-12-02T03:09:22.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MongoDB查询总结&quot;&gt;&lt;a href=&quot;#MongoDB查询总结&quot; class=&quot;headerlink&quot; title=&quot;MongoDB查询总结&quot;&gt;&lt;/a&gt;MongoDB查询总结&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://mycommons.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MongoDB" scheme="http://mycommons.cn/tags/MongoDB/"/>
+    
+      <category term="Map reduce" scheme="http://mycommons.cn/tags/Map-reduce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用MyMockServer模拟数据</title>
+    <link href="http://mycommons.cn/2017/10/13/MyMockServer/"/>
+    <id>http://mycommons.cn/2017/10/13/MyMockServer/</id>
+    <published>2017-10-13T10:34:12.000Z</published>
+    <updated>2019-12-02T03:09:22.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用MyMockServer模拟数据&quot;&gt;&lt;a href=&quot;#使用MyMockServer模拟数据&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mock Server" scheme="http://mycommons.cn/tags/Mock-Server/"/>
+    
+      <category term="MyMockServer" scheme="http://mycommons.cn/tags/MyMockServer/"/>
+    
+      <category term="Proxy" scheme="http://mycommons.cn/tags/Proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈MongoDB数据库</title>
+    <link href="http://mycommons.cn/2017/09/28/MongoDb/"/>
+    <id>http://mycommons.cn/2017/09/28/MongoDb/</id>
+    <published>2017-09-28T10:39:17.000Z</published>
+    <updated>2019-12-02T03:09:22.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浅谈MongoDB数据库&quot;&gt;&lt;a href=&quot;#浅谈MongoDB数据库&quot; class=&quot;headerlink&quot; title=&quot;浅谈MongoDB数据库&quot;&gt;&lt;/a&gt;浅谈MongoDB数据库&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://mycommons.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MongoDB" scheme="http://mycommons.cn/tags/MongoDB/"/>
+    
+      <category term="Java MongoDB" scheme="http://mycommons.cn/tags/Java-MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Curl不显示统计信息% Total % Received %</title>
+    <link href="http://mycommons.cn/2017/09/21/Curl-S/"/>
+    <id>http://mycommons.cn/2017/09/21/Curl-S/</id>
+    <published>2017-09-21T10:42:29.000Z</published>
+    <updated>2019-12-02T03:09:22.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Curl不显示统计信息-Total-Received&quot;&gt;&lt;a href=&quot;#Curl不显示统计信息-Total-Received&quot; class=&quot;headerlink&quot; title=&quot;Curl不显示统计信息% Total % Received
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Curl" scheme="http://mycommons.cn/tags/Curl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈Android Architecture Components</title>
+    <link href="http://mycommons.cn/2017/09/15/Android-Architecture-Components/"/>
+    <id>http://mycommons.cn/2017/09/15/Android-Architecture-Components/</id>
+    <published>2017-09-15T10:51:28.000Z</published>
+    <updated>2019-12-02T03:09:22.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浅谈Android-Architecture-Components&quot;&gt;&lt;a href=&quot;#浅谈Android-Architecture-Components&quot; class=&quot;headerlink&quot; title=&quot;浅谈Android Architecture
+        
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://mycommons.cn/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://mycommons.cn/tags/Android/"/>
+    
+      <category term="Android Architecture Components" scheme="http://mycommons.cn/tags/Android-Architecture-Components/"/>
+    
+      <category term="AAC" scheme="http://mycommons.cn/tags/AAC/"/>
+    
+      <category term="Google" scheme="http://mycommons.cn/tags/Google/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>格式化Curl返回的Json字符</title>
+    <link href="http://mycommons.cn/2017/08/12/curl-fromat-json-response/"/>
+    <id>http://mycommons.cn/2017/08/12/curl-fromat-json-response/</id>
+    <published>2017-08-12T10:30:32.000Z</published>
+    <updated>2019-12-02T03:09:22.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;格式化Curl返回的Json字符&quot;&gt;&lt;a href=&quot;#格式化Curl返回的Json字符&quot; class=&quot;headerlink&quot; title=&quot;格式化Curl返回的Json字符&quot;&gt;&lt;/a&gt;格式化Curl返回的Json字符&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Curl" scheme="http://mycommons.cn/tags/Curl/"/>
+    
+      <category term="Python" scheme="http://mycommons.cn/tags/Python/"/>
+    
+      <category term="Json format" scheme="http://mycommons.cn/tags/Json-format/"/>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自己写个小工具——图片水印生成器</title>
+    <link href="http://mycommons.cn/2017/07/29/WaterMark/"/>
+    <id>http://mycommons.cn/2017/07/29/WaterMark/</id>
+    <published>2017-07-29T10:36:02.000Z</published>
+    <updated>2019-12-02T03:09:22.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;自己写个小工具——图片水印生成器&quot;&gt;&lt;a href=&quot;#自己写个小工具——图片水印生成器&quot; class=&quot;headerlink&quot; title=&quot;自己写个小工具——图片水印生成器&quot;&gt;&lt;/a&gt;自己写个小工具——图片水印生成器&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="图片水印" scheme="http://mycommons.cn/tags/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0/"/>
+    
+      <category term="WaterMark" scheme="http://mycommons.cn/tags/WaterMark/"/>
+    
+      <category term="Homebrew WaterMark" scheme="http://mycommons.cn/tags/Homebrew-WaterMark/"/>
+    
+  </entry>
+  
+</feed>

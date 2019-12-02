@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android Modular,模块化," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="流水不腐小夏" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="关于Android模块化我有一些话不知当讲不当讲 最近公司一个项目使用了模块化设计，本人参与其中的一个小模块开发，但是整体的设计并不是我架构设计的，开发半年有余，在此记录下来我的想法。 [TOC] 模块化场景为什么需要模块化？ 当一个App用户量增多，业务量增长以后，就会有很多开发工程师参与同一个项目，人员增加了，原先小团队的开发方式已经不合适了。 原先的一份代码，现在需要多个人来维护，每个人的代">
+<meta name="keywords" content="Android Modular,模块化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Android模块化我有一些话不知当讲不当讲">
+<meta property="og:url" content="http:&#x2F;&#x2F;mycommons.cn&#x2F;2017&#x2F;05&#x2F;21&#x2F;Android-Modular&#x2F;index.html">
+<meta property="og:site_name" content="流水不腐小夏">
+<meta property="og:description" content="关于Android模块化我有一些话不知当讲不当讲 最近公司一个项目使用了模块化设计，本人参与其中的一个小模块开发，但是整体的设计并不是我架构设计的，开发半年有余，在此记录下来我的想法。 [TOC] 模块化场景为什么需要模块化？ 当一个App用户量增多，业务量增长以后，就会有很多开发工程师参与同一个项目，人员增加了，原先小团队的开发方式已经不合适了。 原先的一份代码，现在需要多个人来维护，每个人的代">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;3.png">
+<meta property="og:updated_time" content="2019-12-02T03:09:22.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;LiushuiXiaoxia&#x2F;AndroidModular&#x2F;master&#x2F;doc&#x2F;1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GRLHBBCD9E',
+      apiKey: '759ab3f5c09b132b3ed4842a44c53c45',
+      indexName: 'mycommons',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mycommons.cn/2017/05/21/Android-Modular/"/>
+
+
+
+
+
+  <title>关于Android模块化我有一些话不知当讲不当讲 | 流水不腐小夏</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?55458ffca1f60dd283f11b9a7f82b262";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">流水不腐小夏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">http://mycommons.cn</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mycommons.cn/2017/05/21/Android-Modular/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="流水不腐小夏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="流水不腐小夏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">关于Android模块化我有一些话不知当讲不当讲</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T18:55:33+08:00">
+                2017-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/21/Android-Modular/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/21/Android-Modular/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="关于Android模块化我有一些话不知当讲不当讲"><a href="#关于Android模块化我有一些话不知当讲不当讲" class="headerlink" title="关于Android模块化我有一些话不知当讲不当讲"></a>关于Android模块化我有一些话不知当讲不当讲</h1><hr>
+<p>最近公司一个项目使用了模块化设计，本人参与其中的一个小模块开发，但是整体的设计并不是我架构设计的，开发半年有余，在此记录下来我的想法。</p>
+<p>[TOC]</p>
+<h2 id="模块化场景"><a href="#模块化场景" class="headerlink" title="模块化场景"></a>模块化场景</h2><p>为什么需要模块化？</p>
+<p>当一个App用户量增多，业务量增长以后，就会有很多开发工程师参与同一个项目，人员增加了，原先小团队的开发方式已经不合适了。</p>
+<p>原先的一份代码，现在需要多个人来维护，每个人的代码质量也不相同，在进行代码Review的时候，也是比较困难的，同时也容易会产生代码冲突的问题。</p>
+<p>同时随着业务的增多，代码变的越来越复杂，每个模块之间的代码耦合变得越来越严重，解耦问题急需解决，同时编译时间也会越来越长。</p>
+<p>人员增多，每个业务的组件各自实现一套，导致同一个App的UI风格不一样，技术实现也不一样，团队技术无法得到沉淀。</p>
+<h2 id="架构演变"><a href="#架构演变" class="headerlink" title="架构演变"></a>架构演变</h2><p>在刚刚开始的时候，项目架构使用的是MVP模式，这也是最近几年很流行的一个架构方式，下面是项目的原始设计。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/1.png" alt="MVP"></p>
+<p>随着业务的增多，我们添加了Domain的概念，Domain从Data中获取数据，Data可能会是Net，File，Cache各种IO等，然后项目架构变成了这样。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/2.png" alt="MVP2"></p>
+<p>再然后随着人员增多，各种基础组件也变的越来越多，业务也很复杂，业务与业务之间还有很强的耦合，就变成了这样的。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/3.png" alt=""></p>
+<p>使用模块化技术以后，架构变成了这样。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/4.png" alt="组件化架构"></p>
+<h2 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h2><p>这里简单介绍下Android项目实现模块化需要使用的技术以及技术难点。</p>
+<h3 id="Library-module"><a href="#Library-module" class="headerlink" title="Library module"></a>Library module</h3><p>在开始开始进行模块化之前，需要把各个业务单独抽取成Android Library Module,这个是Android Studio自带一个功能，可以把依赖较少的，作为基本组件的抽取成一个单独模块。</p>
+<p>如图所示，我把各个模块单独分为一个独立的项目。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/5.png" alt="组件化架构"></p>
+<p>在主项目中使用gradle添加代码依赖。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// common</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleBase'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleComponent'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleService'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// biz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleUser'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleOrder'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleShopping'</span>)</span></pre></td></tr></table></figure>
+
+<h3 id="Library-module开发问题"><a href="#Library-module开发问题" class="headerlink" title="Library module开发问题"></a>Library module开发问题</h3><p>在把代码抽取到各个单独的Library Module中，会遇到各种问题。最常见的就是R文件问题，Android开发中，各个资源文件都是放在res目录中，在编译过程中，会生成R.java文件。R文件中包含有各个资源文件对应的id，这个id是静态常量，但是在Library Module中，这个id不是静态常量，那么在开发时候就要避开这样的问题。</p>
+<p>举个常见的例子，同一个方法处理多个view的点击事件，有时候会使用<code>switch(view.getId())</code>这样的方式，然后用<code>case R.id.btnLogin</code>这样进行判断，这时候就会出现问题，因为id不是经常常量，那么这种方式就用不了。</p>
+<p>同样开发时候，用的最多的一个第三方库就是ButterKnife，ButterKnife也是不可以用的，在使用ButterKnife的时候，需要用到注解配置一个id来找到对应view，或者绑定对应的各种事件处理，但是注解中的各个字段的赋值也是需要静态常量，那么就不能够使用ButterKnife了。</p>
+<p>解决方案有下面几种：</p>
+<p>1.重新一个Gradle插件，生成一个R2.java文件，这个文件中各个id都是静态常量，这样就可以正常使用了。</p>
+<p>2.使用Android系统提供的最原始的方式，直接用<code>findViewById</code>以及<code>setOnClickListener</code>方式。</p>
+<p>3.设置项目支持Databinding，然后使用Binding中的对象，但是会增加不少方法数，同时Databinding也会有编译问题和学习成本，但是这些也是小问题，个人觉的问题不大。</p>
+<p>上面是主流的解决方法，个人推荐的使用优先级为 3 &gt; 2 &gt; 1。</p>
+<p>当把个模块分开以后，每个人就可以单独分组对应的模块就行了，不过会有资源冲突问题，个人建议是对各个模块的资源名字添加前缀，比如user模块中的登录界面布局为<code>activity_login.xml</code>，那么可以写成这样<code>us_activity_login.xml</code>。这样就可以避免资源冲突问题。同时Gradle也提供的一个字段<code>resourcePrefix</code>，确保各个资源名字正确，具体用法可以参考官方文档。</p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>当完成了Library module后，代码基本上已经很清晰了，跟我们上面的最终架构已经很相似了，有了最基本的骨架，但是还是没有完成，因为还是多个人操作同一个git仓库，各个开发小伙伴还是需要对同一个仓库进行各种fork和pr。</p>
+<p>随着对代码的分割，但是主项目app的依赖变多了，如果修改了lib中的代码，那么编译时间是很恐怖的，大概统计了一下，原先在同一个模块的时候，编译时间大概需要2-3min，但是分开以后大概需要5-6min，这个是绝对无法忍受的。</p>
+<p>上面的第一问题，可以这样解决，把各个子module分别使用单独的一个git仓库，这样每个人也只需要关注自己需要的git仓库即可，主仓库使用git submodule的方式，分别依赖各个子模块。</p>
+<p>但是这样还是无法解决编译时间过长的问题，我们把各个模块也单独打包，每次子模块开发完成以后，发布到maven仓库中，然后在主项目中使用版本进行依赖。</p>
+<p>举个例子，比如进行某一版本迭代，这个版本叫1.0.0，那么各个模块的版本也叫同样的版本，当版本完成测试发布后，对各个模块打对应版本的tag，然后就很清楚的了解各模块的代码分布。</p>
+<p>gradle依赖如下。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// common</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:base:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:component:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:service:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// biz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:user:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:order:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:shopping:1.0.0'</span></span></pre></td></tr></table></figure>
+
+<p>可能有人会问，既然各个模块已经分开开发，那么如果进行开发联调，别急，这个问题暂时保留，后面会对这个问题后面再表。</p>
+<h3 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h3><p>当一个大项目拆成若干小项目时候，调用的姿势发生了少许改变。我这边总结了App各个模块之间的数据通信几种方式。</p>
+<ul>
+<li>页面跳转，比如在订单页面下单时候，需要判断用户是否登录，如果没有则需要跳到登录界面。</li>
+<li>主动获取数据，比如在下单时候，用户已经登录，下单需要传递用户的基本信息。</li>
+<li>被动获得数据，比如在切换用户的时候，有时候需要更新数据，如订单页面，需要把原先用户的购物车数据给清空。</li>
+</ul>
+<p>再来看下App的架构。</p>
+<p><img src="https://raw.githubusercontent.com/LiushuiXiaoxia/AndroidModular/master/doc/3.png" alt="App架构"></p>
+<p>第一个问题，原先的方式，直接指定某个页面的ActivityClass，然后通过intent跳转即可，但是在新的架构中，由于shopping模块不直接依赖user，那么则不能使用原始的进行跳转，我们解决方式使用Router路由跳转。</p>
+<p>第二个问题，原先的方式有个专门的业务单利，比如UserManager，直接可以调用即可，同样由于依赖发生了改变，不能够进行调用。解决方案是所有的需要的操作，定义成接口放在Service中。</p>
+<p>第三个问题，原先的方式，可以针对事件变化提供回调接口，当我需要监听某个事件时候，设置回调即可。</p>
+<h4 id="页面路由跳转"><a href="#页面路由跳转" class="headerlink" title="页面路由跳转"></a>页面路由跳转</h4><p>如上分析，原先方式代码如下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, UserActivity<span class="class">.<span class="keyword">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">startActivity(intent);</span></pre></td></tr></table></figure>
+
+<p>但是使用Router后，调用方式改变了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">RouterHelper.dispatch(getContext(), <span class="string">"app://user"</span>);</span></pre></td></tr></table></figure>
+
+<p>具体的原理是什么，很简单的，做一个简单的映射匹配即可，把<code>&quot;app://user&quot;</code>与<code>UserActivity.class</code>配对，具体的就是定义一个Map，key是对应的Router字符，value是Activity的class。在跳转时候从map中获取对应的ActivityClass，然后在使用原始的方式。</p>
+<p>可能有人的会问，要向另外一个页面传递参数怎么办，没事我们可以在router后面直接添加参数，如果是一个复杂的对象那么可以把对象序列化成json字符串，然后再从对应的页面通过反序列化的方式，得到对应的对象。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">RouterHelper.dispatch(getContext(), <span class="string">"app://user?id=123&amp;obj=&#123;"</span>name<span class="string">":"</span>admin<span class="string">"&#125;"</span>);</span></pre></td></tr></table></figure>
+
+<p><strong>注：</strong> 上面的router中json字符串是需要url编码的，不然会有问题的，这里只是做个示例。</p>
+<p>除了使用Router进行跳转外，我想了一下，可以参考Retrofit方式，直接定义跳转Java接口，如果需要传递额外参数，则以函数参数的方式定义。</p>
+<p>这个Java接口是没有实现类的，可以使用动态代理方式，然后接下来的方式，和使用Router的方式一样。</p>
+<p>那么这总两种方式有什么优缺点呢。</p>
+<p><strong>Router方式:</strong></p>
+<ul>
+<li>有点：不需要高难度的技术点，使用方便，直接使用字符串定义跳转，可以好的往后兼容</li>
+<li>缺点：因为使用的是字符串配置，如果字符输入字符，则很难发现bug，同时也很难知道某个参数对应的含义</li>
+</ul>
+<p><strong>仿Retrofit方式:</strong></p>
+<ul>
+<li>因为是Java接口定义，所以可以很简单找到对应的跳转方法，参数定义也很明确，可以直接写在接口定义处，方便查阅。</li>
+<li>同样因为是Java接口定义，那么如果需要扩展参数，只能重新定义新方法，这样会出现多个方法重载，如果在原先接口上修改，对应的原先调用方也要做响应的修改，比较麻烦。</li>
+</ul>
+<p>上面是两种实现方式，如果有相应同学要实现模块化，可以根据实际情况做出选择。</p>
+<h4 id="Interface和Implement"><a href="#Interface和Implement" class="headerlink" title="Interface和Implement"></a>Interface和Implement</h4><p>如上分析，如果需要从某个业务中获取数据，我们分别需要定义接口以及实现类，然在获取的时候在通过反射来实例化对象。</p>
+<p>下面是简单的代码示例</p>
+<p>接口定义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IUserService</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function">String <span class="title">getUserName</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>实现类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">IUserService</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserName</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="string">"UserServiceImpl.getUserName"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>反射生成对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">public class InjectHelper &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    @NonNull</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    public static AppContext getAppContext() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        return AppContext.getAppContext();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    @NonNull</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    public static IModuleConfig getIModuleConfig() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        return getAppContext().getModuleConfig();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    @Nullable</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    public static &lt;T&gt; T getInstance(Class&lt;T&gt; tClass) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        IModuleConfig config &#x3D; getIModuleConfig();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        Class&lt;? extends T&gt; implementClass &#x3D; config.getServiceImplementClass(tClass);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        if (implementClass !&#x3D; null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">            try &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">                return implementClass.newInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">            &#125; catch (Exception e) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">                e.printStackTrace();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        return null;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>实际调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">IUserService userService &#x3D; InjectHelper.getInstance(IUserService.class);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">if (userService !&#x3D; null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Toast.makeText(getContext(), userService.getUserName(), Toast.LENGTH_SHORT).show();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>本示例中每次调用都是用反射生成新的对象，实际应用中可能与IoC工具结合使用，比如Dagger2.</p>
+<h4 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h4><p>针对上面的第三个问题，原先设计的使用方式也是可以的，只需要把回调接口定义到对应的service接口中，然后调用方就可以使用。</p>
+<p>但是我建议可以使用另外一个方式——EventBus，EventBus也是利用观察者模式，对事件进行监听，是设置回调更优雅方式的实现。</p>
+<p>优点：不需要定义很多个回调接口，只需要定义事件Class，然后通过Claas的唯一性来进行事件匹配。</p>
+<p>缺点：需要定义很多额外的类来表示事件，同时也需要关注EventBus的生命周期，在不需要使用事件时候，需要注销事件绑定，不然容易发生内存泄漏。</p>
+<h2 id="映射匹配"><a href="#映射匹配" class="headerlink" title="映射匹配"></a>映射匹配</h2><p>上面的介绍的各个模块之间通信，都运涉及到映射匹配问题，在此我总结了一下，主要涉及到一下三种方式。</p>
+<h3 id="Map-register"><a href="#Map-register" class="headerlink" title="Map register"></a>Map register</h3><p>Map register是这样的，全局定义一个Map，各个模块在初始化的时候，分别在初始化的时候注册映射关系。</p>
+<p>下面是简单的代码示例，比如我们定义一个模块生命周期，用于初始化各个模块。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IModuleLifeCycle</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(IModuleConfig config)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onTerminate</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>User模块初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserModuleLifeCycle</span> <span class="keyword">extends</span> <span class="title">SimpleModuleLifeCycle</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserModuleLifeCycle</span><span class="params">(@NonNull Application application)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">super</span>(application);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@NonNull IModuleConfig config)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        config.registerService(IUserService<span class="class">.<span class="keyword">class</span>, <span class="title">UserServiceImpl</span>.<span class="title">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        config.registerRouter(<span class="string">"app://user"</span>, UserActivity<span class="class">.<span class="keyword">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>在Application中完成初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppContext</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> ModuleLifeCycleManager lifeCycleManager;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">super</span>.onCreate();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        lifeCycleManager = <span class="keyword">new</span> ModuleLifeCycleManager(<span class="keyword">this</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        lifeCycleManager.onCreate();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTerminate</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">super</span>.onTerminate();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        lifeCycleManager.onTerminate();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@NonNull</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> IModuleConfig <span class="title">getModuleConfig</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> lifeCycleManager.getModuleConfig();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ModuleLifeCycleManager</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@NonNull</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> ModuleConfig moduleConfig;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@NonNull</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;IModuleLifeCycle&gt; moduleLifeCycleList;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">    ModuleLifeCycleManager(<span class="meta">@NonNull</span> Application application) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">        moduleConfig = <span class="keyword">new</span> ModuleConfig();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">        moduleLifeCycleList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">        moduleLifeCycleList.add(<span class="keyword">new</span> UserModuleLifeCycle(application));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">        moduleLifeCycleList.add(<span class="keyword">new</span> OrderModuleLifeCycle(application));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">        moduleLifeCycleList.add(<span class="keyword">new</span> ShoppingModuleLifeCycle(application));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (IModuleLifeCycle lifeCycle : moduleLifeCycleList) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">            lifeCycle.onCreate(moduleConfig);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onTerminate</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (IModuleLifeCycle lifeCycle : moduleLifeCycleList) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">            lifeCycle.onTerminate();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@NonNull</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line">    <span class="function">IModuleConfig <span class="title">getModuleConfig</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> moduleConfig;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">56</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">57</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h3><p>使用注解的方式配置映射信息，然后生成一个类似Database一样的文件，然后Database文件中包含一个Map字段，Map中记录各个映射信息。</p>
+<p>首先需要定义个Annotation。</p>
+<p>如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.CLASS)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Implements &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="function">Class <span class="title">parent</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>需要实现一个 Annotation Process Tool，来解析自己定义的Annotation。</p>
+<p>代码略，此代码有点复杂，暂时不贴了。</p>
+<p>编译产生的文件，大概如下所示。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Implement_</span>$$<span class="title">_Database</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@NonNull</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;Class&lt;?&gt;, Class&lt;?&gt;&gt; serviceConfig;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> Implement_$$_Database() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        serviceConfig = <span class="keyword">new</span> HashMap&lt;&gt;();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        serviceConfig.put(IUserService<span class="class">.<span class="keyword">class</span>, <span class="title">UserServiceImpl</span>.<span class="title">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> &lt;T&gt; Class&lt;? extends T&gt; getServiceImplementClass(Class&lt;T&gt; serviceClass) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> (Class&lt;? extends T&gt;) serviceConfig.get(serviceClass);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>然后利用反射找到<code>Implement_$$_Database</code>这个类，然后从方法中找到配对。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">public class InjectHelper &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    @Nullable</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    public static &lt;T&gt; T getInstanceByDatabase(Class&lt;T&gt; tClass) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        Implement_$$_Database database &#x3D; new Implement_$$_Database();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        Class&lt;? extends T&gt; implementClass &#x3D; database.getServiceImplementClass(tClass);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        if (implementClass !&#x3D; null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            try &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                return implementClass.newInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            &#125; catch (Exception e) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">                e.printStackTrace();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        return null;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>然后在需要配置的地方添加注解即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Implements</span>(parent = IUserService<span class="class">.<span class="keyword">class</span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="title">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">IUserService</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserName</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="string">"UserServiceImpl.getUserName"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>调用姿势。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">binding.button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        IUserService userService = InjectHelper.getInstanceByDatabase(IUserService<span class="class">.<span class="keyword">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (userService != <span class="keyword">null</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            Toast.makeText(getContext(), userService.getUserName(), Toast.LENGTH_SHORT).show();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+
+<p><strong>注意点：</strong></p>
+<p>有时候，在生成最终的配置文件的时候，文件的名字是固定的，比如上面的<code>Implement_$$_Database</code>,最终的路径是这样的<code>cn.mycommons.implements.database.Implement_$$_Database.java</code>，然后通过编译到apk中或则是aar中。</p>
+<p>但是有个问题，如果各个子模块都使用了这样的插件，那么每个子模块的就会有这个Implement_$$_Database.class，那么就会编译出错。</p>
+<p>因为aar中包含的时候class文件，不是java文件，不能在使用APT做处理了。下面有2中解决方案。</p>
+<ol>
+<li><p>子工程的插件生成的文件包含一定的规则，比如包含模块名字，如<code>User_Implement_$$_Database.java</code>，同时修改编译过程，把java文件也打包到aar中，主工程的插件在编译时候，提取aar中的文件，然后合并子工程的所有的代码，这个思路是可行的，不过技术实现起来比较麻烦。</p>
+</li>
+<li><p>同一的方式类似，也是生成有一定规则的的文件，或者在特地package下生成class，这些class再通过接下来的所讲的Gradle Transform方式，生成一个新的Database.class文件。</p>
+</li>
+</ol>
+<h3 id="Gradle-Transform"><a href="#Gradle-Transform" class="headerlink" title="Gradle Transform"></a>Gradle Transform</h3><p>这是Android Gradle编译提供的一个接口，可以供开发自定义一些功能，而我们就可以根据这个功能生成映射匹配，这种方式和APT类似，APT是运行在代码编译时期，而且Transform是直接扫描class，然后再生成新的class，class中包含Map映射信息。修改class文件，使用的是<a href="http://jboss-javassist.github.io/javassist/" target="_blank" rel="noopener">javassist</a>一个第三方库。</p>
+<p>下面简单讲述代码实现，后面有机会单独写一篇文章讲解。</p>
+<p>首先定义一个注解，这个注解用于标注一个实现类的接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.mycommons.modulebase.annotations;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.CLASS)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Implements &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="function">Class <span class="title">parent</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>一个测试用的接口以及实现类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ITest</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Implements</span>(parent = ITest<span class="class">.<span class="keyword">class</span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">TestImpl</span> <span class="keyword">implements</span> <span class="title">ITest</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+<p>定义一个静态方法，用于获取某个接口的实现类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.mycommons.modulebase.annotations;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImplementsManager</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Class, Class&gt; CONFIG = <span class="keyword">new</span> HashMap&lt;&gt;();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Class <span class="title">getImplementsClass</span><span class="params">(Class parent)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> CONFIG.get(parent);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>如果不使用任何黑科技，直接使用Java技术，那么在定义时候需要主动的往CONFIG这个map中添加配置，但是这里我们利用transform，直接动态的添加。</p>
+<p>定义一个<code>ImplementsPlugin</code> gradle插件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImplementsPlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">apply</span><span class="params">(Project project)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        AppExtension app = project.getExtensions().getByType(AppExtension<span class="class">.<span class="keyword">class</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        app.registerTransform(<span class="keyword">new</span> ImplementsTransform(project));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>自定义的Transform实现。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImplementsTransform</span> <span class="keyword">extends</span> <span class="title">Transform</span> &#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String IMPLEMENTS_MANAGER = <span class="string">"cn/mycommons/modulebase/annotations/ImplementsManager.class"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String IMPLEMENTS_MANAGER_NAME = <span class="string">"cn.mycommons.modulebase.annotations.ImplementsManager"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    Project project</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    ImplementsTransform(Project project) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.project = project</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">void</span> log(String msg, Object... args) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        String text = String.format(msg, args)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        project.getLogger().error(<span class="string">"[ImplementsPlugin]:$&#123;text&#125;"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> String getName() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="string">"ImplementsTransform"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> Set&lt;QualifiedContent.ContentType&gt; getInputTypes() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> ImmutableSet.of(QualifiedContent.DefaultContentType.CLASSES)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> Set&lt;? super QualifiedContent.Scope&gt; getScopes() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        return ImmutableSet.of(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">                QualifiedContent.Scope.PROJECT,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">                QualifiedContent.Scope.PROJECT_LOCAL_DEPS,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">                QualifiedContent.Scope.SUB_PROJECTS,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">                QualifiedContent.Scope.SUB_PROJECTS_LOCAL_DEPS,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">                QualifiedContent.Scope.EXTERNAL_LIBRARIES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">        )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">    @Override</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">    boolean isIncremental() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">        return false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">    @Override</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">    void transform(TransformInvocation transformInvocation)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">            throws TransformException, InterruptedException, IOException &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">        super.transform(transformInvocation)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">        long time1 = System.currentTimeMillis();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">        log(this.toString() + ".....transform")</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line">        TransformOutputProvider outputProvider = transformInvocation.outputProvider</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line">        outputProvider.deleteAll()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">        def classPool = new ClassPool()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line">        classPool.appendSystemPath()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">56</span></pre></td><td class="code"><pre><span class="line">        // 记录所有的符合扫描条件的记录</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">57</span></pre></td><td class="code"><pre><span class="line">        List&lt;Entry&gt; implementsList = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">58</span></pre></td><td class="code"><pre><span class="line">        // ImplementsManager 注解所在的jar文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">59</span></pre></td><td class="code"><pre><span class="line">        JarInput implementsManagerJar = null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">60</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">61</span></pre></td><td class="code"><pre><span class="line">        // 扫描所有的文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">62</span></pre></td><td class="code"><pre><span class="line">        transformInvocation.inputs.each &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">63</span></pre></td><td class="code"><pre><span class="line">            it.directoryInputs.each &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">64</span></pre></td><td class="code"><pre><span class="line">                classPool.appendClassPath(it.file.absolutePath)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">65</span></pre></td><td class="code"><pre><span class="line">                def dst = outputProvider.getContentLocation(it.name, it.contentTypes, it.scopes, Format.DIRECTORY)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">66</span></pre></td><td class="code"><pre><span class="line">                FileUtils.copyDirectory(it.file, dst)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">67</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">68</span></pre></td><td class="code"><pre><span class="line">                project.fileTree(dst).each &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">69</span></pre></td><td class="code"><pre><span class="line">                    String clazzPath = it.absolutePath.replace(dst.absolutePath, "")</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">70</span></pre></td><td class="code"><pre><span class="line">                    clazzPath = clazzPath.replace("/", ".").substring(1)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">71</span></pre></td><td class="code"><pre><span class="line">                    if (clazzPath.endsWith(".class")) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">72</span></pre></td><td class="code"><pre><span class="line">                        clazzPath = clazzPath.substring(0, clazzPath.size() - 6)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">73</span></pre></td><td class="code"><pre><span class="line">                        CtClass clazz = classPool.get(clazzPath)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">74</span></pre></td><td class="code"><pre><span class="line">                        // 如果class中的类包含注解则先收集起来</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">75</span></pre></td><td class="code"><pre><span class="line">                        Implements annotation = clazz.getAnnotation(Implements.class)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">76</span></pre></td><td class="code"><pre><span class="line">                        if (annotation != null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">77</span></pre></td><td class="code"><pre><span class="line">                            implementsList.add(new Entry(annotation, clazz))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">78</span></pre></td><td class="code"><pre><span class="line">                        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">79</span></pre></td><td class="code"><pre><span class="line">                    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">80</span></pre></td><td class="code"><pre><span class="line">                &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">81</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">82</span></pre></td><td class="code"><pre><span class="line">            it.jarInputs.each &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">83</span></pre></td><td class="code"><pre><span class="line">                classPool.appendClassPath(it.file.absolutePath)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">84</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">85</span></pre></td><td class="code"><pre><span class="line">                if (implementsManagerJar == null &amp;&amp; isImplementsManager(it.file)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">86</span></pre></td><td class="code"><pre><span class="line">                    implementsManagerJar = it</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">87</span></pre></td><td class="code"><pre><span class="line">                &#125; else &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">88</span></pre></td><td class="code"><pre><span class="line">                    def dst = outputProvider.getContentLocation(it.name, it.contentTypes, it.scopes, Format.JAR)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">89</span></pre></td><td class="code"><pre><span class="line">                    FileUtils.copyFile(it.file, dst)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">90</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">91</span></pre></td><td class="code"><pre><span class="line">                    def jarFile = new JarFile(it.file)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">92</span></pre></td><td class="code"><pre><span class="line">                    def entries = jarFile.entries()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">93</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">94</span></pre></td><td class="code"><pre><span class="line">                    // 如果jar中的class中的类包含注解则先收集起来</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">95</span></pre></td><td class="code"><pre><span class="line">                    while (entries.hasMoreElements()) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">96</span></pre></td><td class="code"><pre><span class="line">                        def jarEntry = entries.nextElement()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">97</span></pre></td><td class="code"><pre><span class="line">                        String clazzPath = jarEntry.getName()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">98</span></pre></td><td class="code"><pre><span class="line">                        clazzPath = clazzPath.replace("/", ".")</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">99</span></pre></td><td class="code"><pre><span class="line">                        if (clazzPath.endsWith(".class")) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">100</span></pre></td><td class="code"><pre><span class="line">                            clazzPath = clazzPath.substring(0, clazzPath.size() - 6)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">101</span></pre></td><td class="code"><pre><span class="line">                            def clazz = classPool.get(clazzPath)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">102</span></pre></td><td class="code"><pre><span class="line">                            Implements annotation = clazz.getAnnotation(Implements.class)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">103</span></pre></td><td class="code"><pre><span class="line">                            if (annotation != null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">104</span></pre></td><td class="code"><pre><span class="line">                                implementsList.add(new Entry(annotation, clazz))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">105</span></pre></td><td class="code"><pre><span class="line">                            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">106</span></pre></td><td class="code"><pre><span class="line">                        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">107</span></pre></td><td class="code"><pre><span class="line">                    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">108</span></pre></td><td class="code"><pre><span class="line">                &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">109</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">110</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">111</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">112</span></pre></td><td class="code"><pre><span class="line">        log("implementsManagerJar = " + implementsManagerJar)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">113</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">114</span></pre></td><td class="code"><pre><span class="line">        Map&lt;String, String&gt; config = new LinkedHashMap&lt;&gt;()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">115</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">116</span></pre></td><td class="code"><pre><span class="line">        implementsList.each &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">117</span></pre></td><td class="code"><pre><span class="line">            def str = it.anImplements.toString();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">118</span></pre></td><td class="code"><pre><span class="line">            log("anImplements =" + it.anImplements)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">119</span></pre></td><td class="code"><pre><span class="line">            def parent = str.substring(str.indexOf("(") + 1, str.indexOf(")")).replace("parent=", "").replace(".class", "")</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">120</span></pre></td><td class="code"><pre><span class="line">            log("parent =" + parent)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">121</span></pre></td><td class="code"><pre><span class="line">            log("sub =" + it.ctClass.name)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">122</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">123</span></pre></td><td class="code"><pre><span class="line">            // 收集所有的接口以及实现类的路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">124</span></pre></td><td class="code"><pre><span class="line">            config.put(parent, it.ctClass.name)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">125</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">126</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">127</span></pre></td><td class="code"><pre><span class="line">        log("config = " + config)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">128</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">129</span></pre></td><td class="code"><pre><span class="line">        long time2 = System.currentTimeMillis();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">130</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">131</span></pre></td><td class="code"><pre><span class="line">        if (implementsManagerJar != null) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">132</span></pre></td><td class="code"><pre><span class="line">            def implementsManagerCtClass = classPool.get(IMPLEMENTS_MANAGER_NAME)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">133</span></pre></td><td class="code"><pre><span class="line">            log("implementsManagerCtClass = " + implementsManagerCtClass)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">134</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">135</span></pre></td><td class="code"><pre><span class="line">            // 修改class，在class中插入静态代码块，做初始化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">136</span></pre></td><td class="code"><pre><span class="line">            def body = "&#123;\n"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">137</span></pre></td><td class="code"><pre><span class="line">            body += "CONFIG = new java.util.HashMap();\n"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">138</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">139</span></pre></td><td class="code"><pre><span class="line">            for (Map.Entry&lt;String, String&gt; entry : config.entrySet()) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">140</span></pre></td><td class="code"><pre><span class="line">                body += <span class="string">"CONFIG.put($&#123;entry.key&#125;.class, $&#123;entry.value&#125;.class);\n"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">141</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">142</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">143</span></pre></td><td class="code"><pre><span class="line">            body += <span class="string">"&#125;\n"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">144</span></pre></td><td class="code"><pre><span class="line">            log(<span class="string">"body = "</span> + body)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">145</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">146</span></pre></td><td class="code"><pre><span class="line">            implementsManagerCtClass.makeClassInitializer().body = body</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">147</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">148</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">def</span> jar = implementsManagerJar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">149</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">def</span> dst = outputProvider.getContentLocation(jar.name, jar.contentTypes, jar.scopes, Format.JAR)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">150</span></pre></td><td class="code"><pre><span class="line">            println dst.absolutePath</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">151</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">152</span></pre></td><td class="code"><pre><span class="line">            <span class="comment">// 修改完成后，完成后再写入到jar文件中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">153</span></pre></td><td class="code"><pre><span class="line">            rewriteJar(implementsManagerJar.file, dst, IMPLEMENTS_MANAGER, implementsManagerCtClass.toBytecode())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">154</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">155</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">156</span></pre></td><td class="code"><pre><span class="line">        log(<span class="string">"time = "</span> + (time2 - time1) / <span class="number">1000</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">157</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">158</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">159</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="keyword">boolean</span> isImplementsManager(File file) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">160</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> JarFile(file).getEntry(IMPLEMENTS_MANAGER) != <span class="literal">null</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">161</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">162</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">163</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> rewriteJar(File src, File dst, String name, <span class="keyword">byte</span>[] bytes) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">164</span></pre></td><td class="code"><pre><span class="line">        dst.getParentFile().mkdirs()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">165</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">166</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">def</span> jarOutput = <span class="keyword">new</span> JarOutputStream(<span class="keyword">new</span> FileOutputStream(dst))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">167</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">def</span> rcJarFile = <span class="keyword">new</span> JarFile(src)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">168</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">169</span></pre></td><td class="code"><pre><span class="line">        jarOutput.putNextEntry(<span class="keyword">new</span> JarEntry(name))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">170</span></pre></td><td class="code"><pre><span class="line">        jarOutput.write(bytes)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">171</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">172</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">def</span> buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">173</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> bytesRead</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">174</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">def</span> entries = rcJarFile.entries()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">175</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">176</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">while</span> (entries.hasMoreElements()) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">177</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">def</span> entry = entries.nextElement()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">178</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (entry.name == name) <span class="keyword">continue</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">179</span></pre></td><td class="code"><pre><span class="line">            jarOutput.putNextEntry(entry)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">180</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">181</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">def</span> jarInput = rcJarFile.getInputStream(entry)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">182</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">while</span> ((bytesRead = jarInput.read(buffer)) != <span class="number">-1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">183</span></pre></td><td class="code"><pre><span class="line">                jarOutput.write(buffer, <span class="number">0</span>, bytesRead)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">184</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">185</span></pre></td><td class="code"><pre><span class="line">            jarInput.close()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">186</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">187</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">188</span></pre></td><td class="code"><pre><span class="line">        jarOutput.close()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">189</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">190</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>具体代码可以参考<a href="https://github.com/LiushuiXiaoxia/AndroidModular/tree/master/ImplementsTransformPlugin" target="_blank" rel="noopener">这里</a></p>
+<h3 id="映射匹配总结"><a href="#映射匹配总结" class="headerlink" title="映射匹配总结"></a>映射匹配总结</h3><p><strong>优点:</strong></p>
+<ul>
+<li>Map:简单明了，很容易入手，不会对编译时间产生任何影响，不会随着Gradle版本的升级而受影响，代码混淆时候不会有影响，无需配置混淆文件。</li>
+<li>APT：使用简单，使用注解配置，代码优雅，原理是用代码生成的方式生成新的文件。</li>
+<li>Transform：使用简单，使用注解配置，代码优雅，原理是用代码生成的方式生成新的文件，不过生成的文件的时期和APT不同，会编译时间产生少许影响。</li>
+</ul>
+<p><strong>缺点:</strong></p>
+<ul>
+<li>Map：在需要新添加映射的时候，需要手动添加，不然不会生效，代码不优雅。</li>
+<li>APT：在编译时期生成文件，会编译时间产生少许影响，同时在不同的Gradle的版本中可能会产生错误或者兼容问题。需要配置混淆设置，不然会丢失文件。技术实现复杂，较难维护。</li>
+<li>Transform：在编译时期生成文件，会编译时间产生少许影响，同时在不同的Gradle的版本中可能会产生错误或者兼容问题。需要配置混淆设置，不然会丢失文件。技术实现复杂，较难维护。</li>
+</ul>
+<p>从技术复杂性以及维护性来看，Map &gt; APT = Transform</p>
+<p>从使用复杂性以及代码优雅性来看，Transform &gt; APT  &gt; Map</p>
+<h2 id="开发调试技巧"><a href="#开发调试技巧" class="headerlink" title="开发调试技巧"></a>开发调试技巧</h2><h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><p>上面介绍了很多关于模块化的概念以及技术难题，当模块化完成以后，再进行完成开发时候还是会遇到不少问题。不如原先代码在一起的时候很方便的进行代码调试。但是进行模块化以后，直接使用的是aar依赖，不能直接修改代码，可以使用下面技巧，可以直接进行代码调试。</p>
+<p>在根目录下面创建一个module目录以及module.gradle文件，这个目录和文件是git ignore的，然后把对应的模块代码clone到里面，根目录的setting.gradlew apply module.gradle文件，如下所示，如果需要源码调试，则在module中添加对应的模块。然后在app的依赖中去掉aar依赖，同时添加项目依赖即可。当不需要源码调试好，再修改为到原先代码即可。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    apply <span class="keyword">from</span>: <span class="string">"./module.gradle"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>module.gradle</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> <span class="string">':ModuleShopping'</span></span></pre></td></tr></table></figure>
+
+<p>比如调试shopping模块</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// common</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:base:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:component:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:service:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// biz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:user:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'cn.mycommons:order:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// compile 'cn.mycommons:shopping:1.0.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':ModuleShopping'</span>)</span></pre></td></tr></table></figure>
+
+<p>当然还有个更具技术挑战性方案，使用gradle插件的形式，如果发现root项目中包含的模块化的源码，则不适用aar依赖，直接使用源码依赖，当然这个想法是不错的，不过具有技术挑战性，同时有可能随着Gradle版本的升级，编写的gradle插件也要做相对于的兼容风险，这是只是简单提示一下。</p>
+<h3 id="容器设计"><a href="#容器设计" class="headerlink" title="容器设计"></a>容器设计</h3><p>上面讲到的如果要调试代码时候，需要完整的运行的整个项目，随着项目的增大，编译时间可能变得很长。</p>
+<p>我们可以做一个简单的，类似与主app模块一样，比如我是负责user模块的开发者，那么我只要调试我这个模块就行了，如果需要其他的模块，我可以简单的做一个mock，不是把其他的模块直接依赖过来，这样可以做到调试作用。等到再需要完整项目调试时候，我们在使用上面介绍的方式，这样可以节省不少开发时间。</p>
+<p>还有一种实现调试的方式，比如上面的user模块，目录下面的build.gradle文件是这样的</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.library'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">xxx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">xxx</span></pre></td></tr></table></figure>
+
+<p>我们可以在gradle.properties中设置编译变参数isLibModule，当需要完整调试好，设置为<code>isLibModule=false</code>，这样我这个子模块就是一个<code>apply plugin: &#39;com.android.application&#39;</code>这样的模块，是可以单独运行的一个项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">try &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    if (isLibModule) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        apply from: &quot;.&#x2F;build_lib.gradle&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;else&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        apply from: &quot;.&#x2F;build_app.gradle&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125; catch (e) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>可能有时候还是需要单独的运行环境，android编译方式有2中，一种是debug，一种是release。当打包成aar的时候，使用的是release方式，我们可以把需要调试的代码全部放到debug中，这样打包的时候就不会把调试的文件发布到aar中。不过这种实现方式，需要对Android项目的目录有较高的认识，才可以熟练使用。</p>
+<h3 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h3><p>上面介绍的各个模块需要单独到独立的git仓库，同时打包到单独的maven仓库，当开发完成后，这时候就需要进行打包，但这个是一个简单和重复的事情，所以我们需要一个工具来完成这些事情，我们可以利用CI系统来搞定这件事情，这里我推荐Jenkins，主流厂商使用jenkins作为CI服务器这个方案。</p>
+<p>具体的步骤就是，需要对每个模块的git仓库做web hook，我们公司使用的是git lab，可以对git的各种操作做hook，比如push，merge，tag等。</p>
+<p>当代码发送了变化了，我们可以发送事件到CI服务器，CI服务器再对各个事件做处理，比如user模块develop分支有代码变化，这个变化可能是merge，也有可能是push。我们可以把主项目代码和user项目的代码单独clone下拉，然后编译一下，确认是否有编译问题，如果有编译通过，那么在使用相关gradle命令发布到maven仓库中。</p>
+<p>不管每次编译结果怎样，是成功还是失败，我们都应该把结果回馈给开发者，常见的方式是邮件，不过这个信息邮件方式可能很频繁，我们建议使用slack。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>模块化架构主要思路就是分而治之，把依赖整理清楚，减少代码冗余和耦合，在把代码抽取到各自的模块后，了解各个模块的通信方式，以及可能发生的问题，规避问题或者解决问题。最后为了开发和调试方便，开发一些周边工具，帮助开发更好的完成任务。</p>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a href="http://mobile.51cto.com/app-show-523490.htm" target="_blank" rel="noopener">天猫手机解耦之路</a></p>
+<p><a href="https://github.com/alibaba/BeeHive" target="_blank" rel="noopener">iOS 模块化BeeHive</a></p>
+<p><a href="http://limboy.me/tech/2016/03/10/mgj-components.html" target="_blank" rel="noopener">蘑菇街 App 的组件化之路</a></p>
+<p><a href="http://limboy.me/tech/2016/03/14/mgj-components-continued.html" target="_blank" rel="noopener">蘑菇街 App 的组件化之路·续</a></p>
+<p><a href="https://casatwy.com/iOS-Modulization.html" target="_blank" rel="noopener">iOS应用架构谈 组件化方案</a></p>
+<p><a href="http://jboss-javassist.github.io/javassist/" target="_blank" rel="noopener">javassist资料</a></p>
+<p><a href="http://www.jianshu.com/p/34f23b694412" target="_blank" rel="noopener">iOS组件化方案调研</a></p>
+<p><a href="http://www.cnblogs.com/baronzhang/p/6442047.html" target="_blank" rel="noopener">安居客Android项目架构演进</a></p>
+<p><a href="https://github.com/LiushuiXiaoxia/AndroidModular/" target="_blank" rel="noopener">关于Android模块化我有一些话不知当讲不当讲</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat_pay.jpeg" alt="流水不腐小夏 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="流水不腐小夏 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android-Modular/" rel="tag"># Android Modular</a>
+          
+            <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag"># 模块化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/11/AutoValue/" rel="next" title="Android Model正确使用姿势——AutoValue">
+                <i class="fa fa-chevron-left"></i> Android Model正确使用姿势——AutoValue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/11/CodeAnalysis/" rel="prev" title="Android静态代码分析">
+                Android静态代码分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="流水不腐小夏" />
+            
+              <p class="site-author-name" itemprop="name">流水不腐小夏</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/LiushuiXiaoxia" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-GitHub"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/58771f980bac" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-简书"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/guijiaoba" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-CSDN"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Android模块化我有一些话不知当讲不当讲"><span class="nav-number">1.</span> <span class="nav-text">关于Android模块化我有一些话不知当讲不当讲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化场景"><span class="nav-number">1.1.</span> <span class="nav-text">模块化场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构演变"><span class="nav-number">1.2.</span> <span class="nav-text">架构演变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术要点"><span class="nav-number">1.3.</span> <span class="nav-text">技术要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Library-module"><span class="nav-number">1.3.1.</span> <span class="nav-text">Library module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Library-module开发问题"><span class="nav-number">1.3.2.</span> <span class="nav-text">Library module开发问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖管理"><span class="nav-number">1.3.3.</span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据通信"><span class="nav-number">1.3.4.</span> <span class="nav-text">数据通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面路由跳转"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">页面路由跳转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Interface和Implement"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">Interface和Implement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventBus"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">EventBus</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#映射匹配"><span class="nav-number">1.4.</span> <span class="nav-text">映射匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map-register"><span class="nav-number">1.4.1.</span> <span class="nav-text">Map register</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APT"><span class="nav-number">1.4.2.</span> <span class="nav-text">APT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradle-Transform"><span class="nav-number">1.4.3.</span> <span class="nav-text">Gradle Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射匹配总结"><span class="nav-number">1.4.4.</span> <span class="nav-text">映射匹配总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发调试技巧"><span class="nav-number">1.5.</span> <span class="nav-text">开发调试技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug"><span class="nav-number">1.5.1.</span> <span class="nav-text">Debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器设计"><span class="nav-number">1.5.2.</span> <span class="nav-text">容器设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CI"><span class="nav-number">1.5.3.</span> <span class="nav-text">CI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资料"><span class="nav-number">1.7.</span> <span class="nav-text">相关资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">流水不腐小夏</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://mycommons-cn.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://mycommons.cn/2017/05/21/Android-Modular/';
+          this.page.identifier = '2017/05/21/Android-Modular/';
+          this.page.title = '关于Android模块化我有一些话不知当讲不当讲';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mycommons-cn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
