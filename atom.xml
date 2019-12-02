@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mycommons.cn/"/>
-  <updated>2019-12-02T10:47:20.177Z</updated>
+  <updated>2019-12-02T12:06:47.265Z</updated>
   <id>https://mycommons.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-error</title>
+    <link href="https://mycommons.cn/2019/12/02/hexo-error/"/>
+    <id>https://mycommons.cn/2019/12/02/hexo-error/</id>
+    <published>2019-12-02T12:02:45.000Z</published>
+    <updated>2019-12-02T12:06:47.265Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hexo-命令保存&quot;&gt;&lt;a href=&quot;#Hexo-命令保存&quot; class=&quot;headerlink&quot; title=&quot;Hexo 命令保存&quot;&gt;&lt;/a&gt;Hexo
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Restful风格的验证码</title>
@@ -499,32 +521,6 @@
       <category term="Json format" scheme="https://mycommons.cn/tags/Json-format/"/>
     
       <category term="工具使用" scheme="https://mycommons.cn/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自己写个小工具——图片水印生成器</title>
-    <link href="https://mycommons.cn/2017/07/29/WaterMark/"/>
-    <id>https://mycommons.cn/2017/07/29/WaterMark/</id>
-    <published>2017-07-29T10:36:02.000Z</published>
-    <updated>2019-12-02T10:53:29.285Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;自己写个小工具——图片水印生成器&quot;&gt;&lt;a href=&quot;#自己写个小工具——图片水印生成器&quot; class=&quot;headerlink&quot; title=&quot;自己写个小工具——图片水印生成器&quot;&gt;&lt;/a&gt;自己写个小工具——图片水印生成器&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;做技术好几年了，最近想总结一下，写了几篇文章，不过发现经常有转载的地方，所以想做个图片水印，简书上面的图片是没有水印的，所以就自己写了个工具，供大家使用。&lt;/p&gt;
-&lt;p&gt;这里是&lt;a href=&quot;https://github.com/LiushuiXiaoxia/WaterMark&quot;&gt;地址https://github.com/LiushuiXiaoxia/WaterMark&lt;/a&gt;，水印生成器，可以给指定图片文件或者目录添加水印，水印支持自定义文本、位置、颜色、大小。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具使用" scheme="https://mycommons.cn/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="图片水印" scheme="https://mycommons.cn/tags/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0/"/>
-    
-      <category term="WaterMark" scheme="https://mycommons.cn/tags/WaterMark/"/>
-    
-      <category term="Homebrew WaterMark" scheme="https://mycommons.cn/tags/Homebrew-WaterMark/"/>
     
   </entry>
   
